@@ -59,10 +59,12 @@ const useOrbitControls = (
     if (!threestrap.controls) return () => {}
     const controls = threestrap.controls as OrbitControls
     if (onStart) {
+      // @ts-expect-error for some reason TS only recognizes the end event listener
       controls.addEventListener("start", onStart)
     }
     return () => {
       if (onStart) {
+        // @ts-expect-error for some reason TS only recognizes the end event listener
         controls.removeEventListener("start", onStart)
       }
     }
