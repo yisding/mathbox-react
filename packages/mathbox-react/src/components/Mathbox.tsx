@@ -20,12 +20,12 @@ type Props = WithChildren<
 
 const Mathbox = (
   props: Props,
-  ref: React.Ref<MathboxSelection<"root"> | null>
+  ref: React.Ref<MathboxSelection<"root"> | null>,
 ) => {
   const { container, children, options, ...rootProps } = props
   const mathboxOptions = useDeepCompareMemo(options ?? {}, {})
   const [selection, setSelection] = useState<MathboxSelection<"root"> | null>(
-    null
+    null,
   )
   useEffect(() => {
     if (!container) return () => {}

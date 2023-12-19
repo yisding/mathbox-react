@@ -10,7 +10,7 @@ const useMathbox = () => {
   const selection = useContext(MathboxAPIContext)
   if (!selection) {
     throw new Error(
-      "useMathbox must be used within Mathbox or ContainedMathbox"
+      "useMathbox must be used within Mathbox or ContainedMathbox",
     )
   }
   return selection

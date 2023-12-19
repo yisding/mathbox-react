@@ -28,7 +28,7 @@ const useOrbitControls = (
     onStart,
     onEnd,
     target,
-  }: ControlsProps
+  }: ControlsProps,
 ) => {
   useEffect(() => {
     if (type !== "orbit") return

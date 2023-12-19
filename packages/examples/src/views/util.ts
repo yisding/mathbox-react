@@ -19,12 +19,12 @@ export const isEvaluateableFunc = (argSymbols: string[], dimsOut: number) => {
 }
 
 const compile = memoizeOne(
-  (text: string): math.EvalFunction => math.compile(text)
+  (text: string): math.EvalFunction => math.compile(text),
 )
 
 export const textToAreaEmitter = (
   text: string,
-  scope: Record<string, number>
+  scope: Record<string, number>,
 ): AreaEmitter => {
   const funcText = `f(x,y,t) = ${text}`
   const compiled = compile(funcText)

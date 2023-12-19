@@ -38,7 +38,7 @@ export const isRootDestroyed = (selection: MathboxSelection) => {
  */
 export const isSelectionParent = (
   selection: MathboxSelection,
-  parent: MathboxSelection
+  parent: MathboxSelection,
 ) => {
   const selectionParentNode = (selection as WithPrivateUp)._up?.[0]
   return selectionParentNode === parent[0]

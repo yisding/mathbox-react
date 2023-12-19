@@ -14,7 +14,7 @@ type Props = WithChildren<
 
 const ContainedMathbox = (
   props: Props,
-  ref: React.Ref<MathboxSelection<"root">>
+  ref: React.Ref<MathboxSelection<"root">>,
 ) => {
   const { children, containerId, containerClass, containerStyle, ...others } =
     props

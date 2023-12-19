@@ -28,13 +28,13 @@ type MathboxComponent<T extends NodeType> = React.ForwardRefExoticComponent<
 >
 
 const mathboxComponentFactory = <T extends NodeType>(
-  type: T
+  type: T,
 ): MathboxComponent<T> => {
   const canHaveChildren = canNodeHaveChildren(type)
   const componentName = capitalize(type)
   const Comp = (
     props: WithChildren<Props[T]> & { liveProps?: LiveProps<Props[T]> },
-    ref: React.Ref<MathboxSelection<T> | null>
+    ref: React.Ref<MathboxSelection<T> | null>,
   ) => {
     const [_ignored, forceUpdate] = useReducer((x) => x + 1, 0)
     const parent = useContext(MathboxAPIContext)
@@ -47,7 +47,7 @@ const mathboxComponentFactory = <T extends NodeType>(
           selection.current = null
         }
       },
-      []
+      [],
     )
     useImperativeHandle(ref, () => selection.current)
 

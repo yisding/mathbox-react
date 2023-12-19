@@ -19,7 +19,7 @@ export const CustomMathbox = (props: MathboxProps) => {
       ...storybookDefaultMathboxOptions,
       ...(overrides ?? {}),
     }),
-    [overrides]
+    [overrides],
   )
   const setup = useCallback((mathbox: MathboxSelection<"root"> | null) => {
     if (mathbox === null) return

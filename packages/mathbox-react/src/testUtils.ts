@@ -11,7 +11,7 @@ type Automock = any
  * @returns
  */
 const getAutomock = <T extends Record<string | symbol, unknown>>(
-  specifics?: T
+  specifics?: T,
 ): Automock => {
   const autmockSeed = jest.fn()
   const handler = {

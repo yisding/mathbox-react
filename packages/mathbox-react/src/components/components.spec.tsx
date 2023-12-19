@@ -52,7 +52,7 @@ describe("Cartesian", () => {
     render(
       <ContainedMathbox ref={mbRef}>
         <Cartesian ref={cartesianRef} />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     expect(mbRef.current?.[0].type).toBe("root")
@@ -64,7 +64,7 @@ describe("Cartesian", () => {
     render(
       <ContainedMathbox ref={mbRef}>
         <Cartesian />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     expect(mbRef.current?.select("cartesian").length).toBe(1)
   })
@@ -77,7 +77,7 @@ describe("Cartesian", () => {
           <Grid />
           <Grid />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     mbRef.current?.print()
     expect(mbRef.current?.select("cartesian").length).toBe(1)
@@ -89,7 +89,7 @@ describe("Cartesian", () => {
     const { rerender } = render(
       <ContainedMathbox ref={mbRef}>
         <Cartesian />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     expect(mbRef.current?.select("cartesian").length).toBe(1)
     rerender(<ContainedMathbox ref={mbRef} />)
@@ -104,7 +104,7 @@ describe("Cartesian", () => {
     render(
       <ContainedMathbox ref={mbRef}>
         <Cartesian {...props} />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     const cartesian = mbRef.current?.select<"cartesian">("cartesian")
 
@@ -120,7 +120,7 @@ describe("Cartesian", () => {
     const { rerender } = render(
       <ContainedMathbox ref={mbRef}>
         <Cartesian />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     const cartesian = mbRef.current?.select<"cartesian">("cartesian")
     assertNotNil(cartesian)
@@ -129,7 +129,7 @@ describe("Cartesian", () => {
     rerender(
       <ContainedMathbox ref={mbRef}>
         <Cartesian visible={false} />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     expect(cartesian.get("visible")).toBe(false)
   })
@@ -145,7 +145,7 @@ describe("Cartesian", () => {
             }}
           />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     const grid = mbRef.current?.select<"grid">("grid")
     assertNotNil(grid)
@@ -164,7 +164,7 @@ describe("Cartesian", () => {
         <Cartesian>
           <Grid width={10} />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
     expect(grid.get("width")).toBe(10)
   })
@@ -179,7 +179,7 @@ describe("Cartesian", () => {
         <Cartesian ref={cartesianRef}>
           <Grid ref={gridRef} />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     const mb1 = mbRef.current
@@ -206,7 +206,7 @@ describe("Cartesian", () => {
         <Cartesian ref={cartesianRef}>
           <Grid ref={gridRef} />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     const mb2 = mbRef.current
@@ -263,7 +263,7 @@ describe("Cartesian", () => {
         <Cartesian>
           <Grid />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     assertNotNil(mbRef.current)
@@ -275,7 +275,7 @@ describe("Cartesian", () => {
           <Grid />
           <Grid />
         </Cartesian>
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     assertNotNil(mbRef.current)
@@ -284,7 +284,7 @@ describe("Cartesian", () => {
     rerender(
       <ContainedMathbox ref={mbRef} options={{}}>
         <Cartesian />
-      </ContainedMathbox>
+      </ContainedMathbox>,
     )
 
     assertNotNil(mbRef.current)
@@ -304,7 +304,7 @@ describe("<Voxel />", () => {
               <Grid />
             </Voxel>
           </Cartesian>
-        </ContainedMathbox>
+        </ContainedMathbox>,
       )
     expect(willThrow).toThrow("Component <Voxel /> cannot have children.")
   })

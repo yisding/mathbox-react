@@ -20,5 +20,5 @@ root.render(
       <Route path="/color-cube" element={<ColorCube />} />
       <Route path="/simple-example" element={<SimpleExample />} />
     </Routes>
-  </BrowserRouter>
+  </BrowserRouter>,
 )
